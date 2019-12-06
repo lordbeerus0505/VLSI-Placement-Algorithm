@@ -18,10 +18,62 @@
     font-size:0; 
     }
   </style>
+  <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
   <body>
       <button type="button" class="button" id="homeBut" style="position: absolute;left: 33%;top: 6%;width: 4%;height: 3%;" onclick="window.location.href='{{ url_for('home') }}';">Upload CSV</button>
     <button type="button" class="button" id="uploadBut" style="position: absolute;left: 40%;top: 6%; width: 6%;height: 3%;" onclick="window.location.href='{{ url_for('upload') }}';">Upload CSV</button>
     <button type="button" id="visualBut" class=""style="position: absolute;left: 49%;top: 6%; width: 12%;height:3%;" onclick="window.location.href='{{ url_for('view') }}';">Visualize Placement </button>
+    <div  style="position: absolute; left: 25.4%;top: 20.2%;" onclick="choose('one')">
+      <img id="one" alt="image 1"src = "/static/{{results[0]}}" height="390" width="900"></div>
+    <div  style="position: absolute; left: 5.4%;top: 70.5%;" onclick="choose('two')">
+      <img id="two" alt="image 1"src = "/static/{{results[1]}}" height="220" width="350"></div>
+    <div  style="position: absolute; left: 29%;top: 70.5%;" onclick="choose('three')">
+      <img id="three" alt="image 1"src = "/static/{{results[2]}}" height="220" width="350"></div>
+    <div  style="position: absolute; left: 52.8%;top: 70.5%;" onclick="choose('four')">
+      <img id="four" alt="image 1"src = "/static/{{results[3]}}" height="220" width="350"></div>
+    <div  style="position: absolute; left: 76.4%;top: 70.5%;" onclick="choose('five')">
+      <img id="five" alt="image 1"src = "/static/{{results[4]}}" height="220" width="350"></div>
+
+      <div id="myModal" class="modal" style="position: absolute; left:25%;top:15%; width:50%;height: 50%;background-color: whitesmoke">
+
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+
+        <!-- Modal Content (The Image) -->
+        <img class="modal-content" id="img01">
+
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+    </div>
+
+    <script>
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById(value);
+    function choose(name)
+    {
+        img=document.getElementById(name);
+        // alert("Reached this part"+img.src);
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+        img.onclick = function(){
+            // alert("hello");
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+        }
+        // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    }
     
+
+    
+  </script>
   </body>
 </html>

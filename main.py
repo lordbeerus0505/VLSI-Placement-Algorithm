@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 results=[  'arch.jpg','blockchain.jpg','book.png','database.png','arch.jpg' ,'output.png'] #has the file names
 @app.route("/")
 def home():
-    return flask.render_template("home.html")
+    return flask.render_template("home.html",results=results)
 
 @app.route("/upload")
 def upload():
