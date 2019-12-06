@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+    <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+    <style>
+    .but{
+      background-color: #008CBA; /* Green */
+    border: none;
+    align-items: center;
+    
+    color: white;
+    padding: 15px 32px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container" style="align-content: center;left:50%;">
+        <h1 class="logo" style="text-align:center">INTELLIGENT TRANSPORTATION SYSTEM</h1>
+        
+          <a href="{{ url_for('home') }}" class="but">Home</a>
+          
+        
+      </div>
+    </header>
+{% block content %}
+{% endblock %}
+ </body>
+</html>

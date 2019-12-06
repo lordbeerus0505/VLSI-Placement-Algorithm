@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VLSI placement thing (CHANGE)</title>
+  </head>
+  <style>
+    body{
+      background-image: url('/static/images/visual.png');
+      background-repeat: no-repeat;
+      background-color:aquamarine;
+      background-size:cover;
+      
+    }
+    button {
+    background: transparent;
+    border: none !important;
+    font-size:0; 
+    }
+    
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+  <body>
+      <script>
+          var value="two";
+      </script>
+        <button id="homeBut" style="position: absolute;left: 77%;top: 6%;width: 10%;height: 3%;" onclick="window.location.href='{{ url_for('download') }}';"> Download Report</button>
+        <button type="button" class="button1" id="homeBut" style="position: absolute;left: 33%;top: 6%;width: 4%;height: 3%;" onclick="window.location.href='{{ url_for('home') }}';">Upload CSV</button>
+      <button type="button" class="button1" id="uploadBut" style="position: absolute;left: 40%;top: 6%; width: 6%;height: 3%;" onclick="window.location.href='{{ url_for('upload') }}';">Upload CSV</button>
+      <button type="button" id="visualBut" class=""style="position: absolute;left: 49%;top: 6%; width: 12%;height:3%;" onclick="window.location.href='{{ url_for('view') }}';">Visualize Placement </button>
+        <div  style="position: absolute; left: 6.5%;top: 22.5%;" onclick="choose('one')">
+                <img id="one" alt="image 1"src = "/static/{{results[0]}}" height="280" width="440">
+        </div>
+        <div  style="position: absolute; left: 36.5%;top: 22.5%;"onclick="choose('two')">
+                <img id="two" alt="image 2" src = "/static/{{results[1]}}" height="280" width="440">
+        </div>
+        <div  style="position: absolute; left: 66.5%;top: 22.5%;"onclick="choose('three')">
+                <img id="three" alt="image 3"src = "/static/{{results[2]}}" height="280" width="440">
+        </div>
+        <div  style="position: absolute; left: 6.5%;top: 62%;" onclick="choose('four')">
+                <img id="four" alt="image 4"src = "/static/{{results[3]}}" height="280" width="440">
+        </div>
+        <div  style="position: absolute; left: 36.5%;top: 62%;" onclick="choose('five')">
+                <img id="five" alt="image 5" src = "/static/{{results[4]}}" height="280" width="440">
+        </div>
+        <div  style="position: absolute; left: 66.5%;top: 62%;" onclick="choose('six')">
+                <img id="six" alt="image 6" src = "/static/{{results[5]}}" height="280" width="440">
+        </div>
+      
+
+        <!-- <img id="myImg" src="/static/doc.jpg" alt="Snow" style="width:100%;max-width:300px"> -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal" style="position: absolute; left:25%;top:15%; width:50%;height: 50%;background-color: whitesmoke">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+
+        <script>
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var img = document.getElementById(value);
+        function choose(name)
+        {
+            img=document.getElementById(name);
+            // alert("Reached this part"+img.src);
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            img.onclick = function(){
+                // alert("hello");
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            }
+            // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        modal.style.display = "none";
+        }
+        }
+        
+
+        
+    </script>
+    </body>
+</html>
