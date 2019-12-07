@@ -6,7 +6,7 @@ from photoOutput import photo
 from pdftoimg import pdftoimage
 app = flask.Flask(__name__)
 
-results=[  'arch.jpg','blockchain.jpg','book.png','database.png','arch.jpg' ,'output.png'] #has the file names
+results=[ 'output1.png','output2.png','output3.png','output4.png','out_tier12.png','out_tier11.png'] #has the file names
 @app.route("/")
 def home():
     return flask.render_template("home.html",results=results)

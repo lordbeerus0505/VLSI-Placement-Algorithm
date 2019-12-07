@@ -5,7 +5,7 @@ import cv2
 import imutils
 pdf = FPDF()
 # imagelist is the list with all image filenames
-imagelist=['arch.jpg','blockchain.jpg','book.png','database.png','pdfimg.png' ,'output.png','icDiagram.jpg']
+imagelist=['output1.png','output2.png','output3.png','out_tier11.png','out_tier12.png']
 def generatePDF(imagelist,outputlist):
     width,height=600,900
     for i in range(len(imagelist)):
@@ -46,5 +46,5 @@ def generatePDF(imagelist,outputlist):
         pdf.image(image,left,top)
     pdf.output("report.pdf", "F")
 
-outputlist=['output_arch.png','output_blockchain.png','output_book.png','output_database.png','output_pdfimg.png' ,'output_output.png','output_icDiagram.png']
+outputlist=['output_output1.png','output_output2.png','output_output3.png','output_out_tier11.png','output_out_tier12.png']
 generatePDF(imagelist,outputlist)

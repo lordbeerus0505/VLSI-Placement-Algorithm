@@ -8,6 +8,6 @@ def pdftoimage(path):
     images = convert_from_path(path)
     # print(path[:-3]+"pdf")
     # images[0].save(path[:-3]+"png")
-    images[0].save("pdfimg.png")
+    images[0].save("output1.png")
 
-pdftoimage("report.pdf")
+pdftoimage("tier2_d1.pdf")
